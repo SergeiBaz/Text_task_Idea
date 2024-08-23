@@ -1,18 +1,20 @@
 package com.example.product.api
 
 import com.example.product.api.model.Product
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 
 interface ProductRepository {
 
-    val products: Flow<List<Product>>
+    val products: StateFlow<List<Product>>
 
-    suspend fun getAllProducts(): List<Product>
+    suspend fun getAllProduct()
 
-    suspend fun searchItems(query: String): List<Product>
+    suspend fun searchProduct(query: String)
 
-    suspend fun updateItem(amount: Int, id: Int)
+    suspend fun insertProduct(product: Product)
 
-    suspend fun deleteItem(id: Int)
+    suspend fun updateProductById(amount: Int, id: Int)
+
+    suspend fun deleteProductById(id: Int)
 
 }

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Test_task</string>
+    <string name="in_warehouse">На складе</string>
+    <string name="not_available">Нет в наличии</string>
+    <string name="search_product">Поиск товаров</string>
+    <string name="list_product">Список товаров</string>
+    <string name="remove_product">Удаление товара</string>
+    <string name="quantity_product">Количество товара</string>
+    <string name="add_product">Добавить товар</string>
+    <string name="adding_product">Добавление товара</string>
+    <string name="are_you_sure_to_delete_product">Вы уверены, что хотите удалить выбранный товар?</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="cancel">Отменить</string>
+    <string name="name">Название</string>
+    <string name="quantity">Количество</string>
+    <string name="tags_separated">Теги через \" , \"</string>
+    <string name="product_successfully_delete">Товар успешно удален!</string>
+    <string name="product_successfully_added">Товар успешно добавлен!</string>
+    <string name="product_successfully_update">Товар успешно обновлен!</string>
 </resources>

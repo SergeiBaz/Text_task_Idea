@@ -2,10 +2,19 @@ package com.example.test_task.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+//Black
+val BlackPrimary = Color(0xFF060537)
+val BlackSecondary = Color(0xFF414155)
+val BlackThree = Color(0xFF8F9CA6)
+val BlackFour = Color(0xFFD0DAE2)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+//Blue
+val BluePrimary = Color(0xFF007AFF)
+
+//Red
+val RedPrimary = Color(0xFFFD2525)
+
+val White = Color(0xFFFFFFFF)
+
+//Background
+val Background = Color(0xFFF2F2F7)
