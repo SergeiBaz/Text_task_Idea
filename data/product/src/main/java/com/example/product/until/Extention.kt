@@ -1,23 +1,29 @@
 package com.example.product.until
 
-import android.os.Build
-import androidx.annotation.RequiresApi
-import java.time.format.DateTimeFormatter
-import java.time.Instant.ofEpochMilli
-import java.time.ZoneId.systemDefault
-import java.time.LocalDate
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
 
-@RequiresApi(Build.VERSION_CODES.O)
+/**
+ * Должно быть в core каком нибудь, но его было лень создавать
+ */
+
 internal fun Long.toDateString(): String {
-    val date = ofEpochMilli(this)
-        .atZone(systemDefault())
-        .toLocalDate()
-    return date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+    val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+    dateFormat.timeZone = TimeZone.getDefault()
+    return dateFormat.format(Date(this))
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
 internal fun String.toMilliseconds(): Long {
-    val dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
-    val localDate = LocalDate.parse(this, dateFormatter)
-    return localDate.atStartOfDay(systemDefault()).toInstant().toEpochMilli()
+    val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+    dateFormat.timeZone = TimeZone.getDefault()
+    return try {
+        val date = dateFormat.parse(this) ?: throw ParseException("Invalid date format", 0)
+        date.time
+    } catch (e: ParseException) {
+        e.printStackTrace()
+        0L
+    }
 }
